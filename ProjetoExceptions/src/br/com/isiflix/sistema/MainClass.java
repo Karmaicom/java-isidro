@@ -3,33 +3,40 @@ package br.com.isiflix.sistema;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import br.com.isiflix.exceptions.IsiException;
+import br.com.isiflix.model.Produto;
+
 public class MainClass {
 
 	public static void main(String[] args) {
 		
-		try {
-			Scanner teclado = new Scanner(System.in);
-			int v1, v2, r;
+		// MULTICATCH
+		/*
+		try {			
+			Produto p = new Produto();
+			p.setId(1);
+			p.setDescricao("Computador");
 			
-			System.out.print("Digite um valor: ");
-			v1 = teclado.nextInt();
-			System.out.print("Digite outro valor: ");
-			v2 = teclado.nextInt();
+			System.out.println(p);
 			
-			r = v1/v2;
-			
-			System.out.println("Resultado da divisao = " + r);
-			teclado.close();
-			
-		} catch (ArithmeticException aritException) {
-			System.out.println("Eita! Não pra dividir por zero");
-		} catch (InputMismatchException inputException) {
-			System.out.println("Eita! Informe números inteiros");
-		} catch (Exception e) {
-			System.out.println("Eita! DEu algum ruim que não o que é");
-		} finally {
-			System.out.println("Fim do programa");
+		} catch (IsiException | ArithmeticException | InputMismatchException e) {
+			System.out.println("ERROR: " + e.getMessage());
 		}
+		*/
+		
+		try (Scanner teclado = new Scanner(System.in)) {
+			
+			System.out.print("Digite o primeiro valor: ");
+			int v1 = teclado.nextInt();
+			System.out.print("Digite o segundo valor: ");
+			int v2 = teclado.nextInt();
+			int r = v1/v2;
+			System.out.println("Resultado: " + r);
+			
+		} catch (Exception e) {
+			System.out.println("Epa! " + e.getMessage());
+		}
+		
 	}
 	
 }
