@@ -20,8 +20,6 @@ public class MainClass {
 		System.out.println("\n------------------\n");
 		lista.stream().filter(x -> x.getPreco() > 100).forEach(x -> System.out.println(x));
 		
-		ArrayList<Integer> listaQtde = new ArrayList<Integer>();
-		
 		System.out.println("\n------------------\n");
 		int estoque = 0;
 		estoque = lista.stream().map(p -> p.getQuantidade()).reduce(0, (q1, q2) -> q1 + q2);
