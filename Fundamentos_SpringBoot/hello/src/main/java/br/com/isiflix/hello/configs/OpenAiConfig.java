@@ -1,4 +1,4 @@
-package br.com.isiflix.hello.config;
+package br.com.isiflix.hello.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

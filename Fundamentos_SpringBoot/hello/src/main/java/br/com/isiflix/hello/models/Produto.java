@@ -1,4 +1,4 @@
-package br.com.isiflix.hello.model;
+package br.com.isiflix.hello.models;
 
 public class Produto {
 
@@ -38,6 +38,11 @@ public class Produto {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", descricao=" + descricao + ", preco=" + preco + "]";
 	}
 
 }
