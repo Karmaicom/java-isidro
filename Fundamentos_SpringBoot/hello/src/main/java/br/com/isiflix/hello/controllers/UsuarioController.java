@@ -1,5 +1,6 @@
 package br.com.isiflix.hello.controllers;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,12 +26,12 @@ public class UsuarioController {
 				resposta.setEmail(dadosLogin.getEmail());
 				resposta.setSenha("******");
 				
-				return ResponseEntity.ok(resposta);
+				return ResponseEntity.status(HttpStatus.OK).body(resposta);
 			} 
-			return ResponseEntity.status(401).build();
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 		} 
 		
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 
 }
